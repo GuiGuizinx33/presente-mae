@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+    margin: 0;
+}
+
+#celebrateBtn {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff69b4;
+    color: white;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+#celebrateBtn:hover {
+    background-color: #ff1493;
+}
+
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+#photos {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center; /* Alinha as imagens ao centro */
+    align-items: center; /* Alinha as imagens verticalmente ao centro */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    flex-wrap: wrap; /* Permite que as imagens quebrem linha caso necessário */
+}
+
+.photo {
+    width: 150px; /* Define um tamanho padrão para as imagens */
+    height: 150px; /* Define uma altura padrão para manter o quadrado */
+    object-fit: cover; /* Ajusta a imagem para cobrir a área definida sem distorção */
+    border-radius: 10px;
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    opacity: 0.7;
+    animation: fall linear forwards;
+    border-radius: 50%;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
